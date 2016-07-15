@@ -60,7 +60,7 @@ public class Main {
 			URL url = new URL("https://igcdn-photos-b-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-15/e35/13129353_1789718211314833_190502334_n.jpg?ig_cache_key=MTI0NzQ1MTg1MTY2MTE1OTA5Mw%3D%3D.2");
 			System.out.println(imagesPath);
 			List<String> ids = loadIds();
-			saveImage(url, imagesPath + "/teste.jpg");
+			//saveImage(url, imagesPath + "/teste.jpg");
 			System.out.println("File: " + "teste.jpg" + " saved!");
 			
 		} catch (IOException e) {
