@@ -33,12 +33,12 @@ function initialize() {
     position: new google.maps.LatLng(-21.1133077,-44.1843081),
     title: "Casamento Mariana & Pedro <3",
     map: map,
-    icon: 'img/bike-zone-signal.png'
+    icon: '../img/bike-zone-signal.png'
 	});
 	
 	var boxText = document.createElement("div");
 		boxText.style.cssText = "border: 1px solid black; margin-top: 8px; background: #305174; padding: 5px; color: white;"; 
-		boxText.innerHTML = "<div style=\"text-align: center;\">Local do Evento, Tiradentes</div><br><img border=\"0\" src=\"img/festa-tiradentes-sm.jpg\" alt=\"BAR\" width=\"304\" height=\"228\" style=\"margin-left: 11px;\"><br>Pousada onde será realizado o casamento<br>Rua Santíssima Trindade, 1000 - Tiradentes, Minas Gerais";
+		boxText.innerHTML = "<div style=\"text-align: center;\">Local do Evento, Tiradentes</div><br><img border=\"0\" src=\"../img/festa-tiradentes-sm.jpg\" alt=\"BAR\" width=\"304\" height=\"228\" style=\"margin-left: 11px;\"><br>Pousada onde será realizado o casamento<br>Rua Santíssima Trindade, 1000 - Tiradentes, Minas Gerais";
 
 	var myOptions = {
 			content: boxText,
