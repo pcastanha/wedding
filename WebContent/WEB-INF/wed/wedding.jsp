@@ -189,14 +189,14 @@ http://www.templatemo.com/tm-473-november
 				<div class="Line"></div>	
 				<!-- \\ Begin Tab side \\ -->
 				<div class="Tabside" style="padding-bottom: 225px;">
-					<ul>
+					<!-- <ul>
 						<li><a href="javascript:;" class="tabLink activeLink" id="cont-1">Pais</a></li>
 						<li><a href="javascript:;" class="tabLink" id="cont-2">Padrinhos</a></li>
 						<li><a href="javascript:;" class="tabLink" id="cont-3">Nome</a></li>
 						<li><a href="javascript:;" class="tabLink" id="cont-4">Nome</a></li>
 						<li><a href="javascript:;" class="tabLink" id="cont-5">Nome</a></li>
 						<li><a href="javascript:;" class="tabLink" id="cont-6">Nome</a></li>
-					</ul>
+					</ul> -->
 				  <div class="clear"></div>
 					<div class="tabcontent" id="cont-1-1">
 						<div class="TabImage" style="width: 50%; left: 18%;">
