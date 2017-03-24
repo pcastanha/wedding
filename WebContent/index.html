@@ -258,38 +258,42 @@
             <div class="container-fluid">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-8">
+                        <!-- div class="col-md-8" -->
                             <h3> Sua presença é muito importante pra nós!</h3>
                             <p>Agradecemos que confirme sua presença!</p>
 							
-							<div class="col-xs-6">
-							  <label for="ex3">col-xs-4</label>
+							<!-- <div class="col-xs-6">
+							  <label for="ex3">Nome: </label>
 							  <input class="form-control" id="ex3" type="text">
 							</div>
 							
 							<div class="col-xs-2">
-							  <label for="ex1">col-xs-2</label>
+							  <label for="ex1">Confirmados: </label>
 							  <input class="form-control" id="ex1" type="text">
 							</div>
-                           
-							<!-- form class="form-inline">	
-								<div class="form-group">
-								<label for="email">Nome:</label>
+							
+							<div class="col-xs-2">
+							  <input type="button" id="btn-submit" class="btn btn-default" 
+							  	onclick="sendConfirmation()" title="Enviar" value="Enviar">
+							</div> -->
 
-								<input type="email" class="form-control" id="email" placeholder="Nome completo..." >
-							  </div>
-							  <div class="form-group">
-								<label for="pwd">Password:</label>
-								<input type="password" class="form-control" id="pwd" placeholder="N convidados...">
-							  </div>
-							  <br> <br> <br>
-							  <button type="button" class="btn btn-danger">Confirmar Presença <3 </button>
-							  <button type="submit" class="btn btn-default">Confirmar ausência</button>
-							</form> -->
-                        </div>
+							<form class="form row">
+								<div class="form-group col-xs-4">
+									<!-- <label for="fd1">Nome</label> --> <input type="text"
+										class="form-control" id="fd1" placeholder="Nome completo...">
+								</div>
+								<div class="form-group col-xs-2">
+									<!-- <label for="fd2">Convidados</label> --> <input type="text"
+										class="form-control" id="fd2" placeholder="# convidados...">
+								</div>
+								<input type="button"
+									id="btn-submit" class="btn btn-danger" style="margin-left: 15px;"
+									onclick="sendConfirmation()" value="Enviar">
+							</form>
+						</div>
                     </div>
                 </div>
-            </div>
+            <!-- /div -->
         </section>
 		
 		  <section id="fornecedores" class="clients wow fadeInUp" data-wow-delay="300ms">
@@ -347,6 +351,7 @@
         <script src="assets/js/odometer.js"></script>
 		<script src="assets/js/jquery.jcarousel.min.js"></script>
         <script src="assets/js/jcarousel.responsive.js"></script>
+        <script src="assets/js/util.js"></script>
     </body>
 </html>
 
