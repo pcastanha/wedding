@@ -11,7 +11,12 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-public class Mail {
+import com.pedro.wed.interfaces.IMail;
+
+public class Mail implements IMail{
+	
+	public Mail(){}
+	public Mail(String host){}
 
 	public static MimeMessage configureMail(){
 		
@@ -65,5 +70,10 @@ public class Mail {
 
 	public static void sendMail() throws MessagingException{
 		Transport.send(Mail.configureMail());
+	}
+
+	@Override
+	public Mail getMail() {
+		return new Mail();
 	}
 }
