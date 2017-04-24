@@ -25,6 +25,7 @@
         <link rel="stylesheet" href="assets/css/animate.css">
         <link rel="stylesheet" href="assets/css/magnific-popup.css">
         <link rel="stylesheet" href="assets/css/odometer-theme-default.css">
+        <link rel="stylesheet" href="assets/css/rmodal.css">
 		<!--link rel="stylesheet" type="text/css" href="assets/css/jcarousel-style.css"-->
 		<link rel="stylesheet" type="text/css" href="assets/css/jcarousel.responsive.css">
         <script>
@@ -124,9 +125,10 @@
                 <div class="row">
                     <div class="col-md-7">
                         <h2>A cerimônia</h2>
-                        <p>Descrever o porque fazer a cerimônia em macacos... etc</p>
+                        <p>Aguardamos vc para compartilhar com a gente esse momento tão especial às 15h30 do dia 08 de julho de 2017 na Pousada Vila Solaris!
+Para aproveitarem aconselhamos que venham de uber, táxi ou aproveitem o fds em Macacos! <3</p>
                         <p>Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nulla vitae elit libero, a pharetra augue.</p>
-                        <a class="btn btn-danger btn-lg" href="#">Take a Look <i class="fa fa-arrow-circle-o-right"></i> </a>
+                        <a id="showModal" class="btn btn-danger btn-lg" href="#">Take a Look <i class="fa fa-arrow-circle-o-right"></i> </a>
                     </div>
                     <div class="col-md-5">
                         <a href="#">
@@ -334,6 +336,33 @@
                 </div>
             </div>
         </footer>
+        
+        <div id="modal" class="modal">
+        <div class="modal-dialog animated">
+            <div class="modal-content">
+                <form class="form-horizontal" method="get">
+                    <div class="modal-header">
+                        <strong>Yep, I'm a dialog...</strong>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="dummyText" class="control-label col-xs-4">Dummy text</label>
+                            <div class="input-group col-xs-7">
+                                <input type="text" name="dummyText" id="dummyText" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-default" type="button" onclick="modal.close();">Cancel</button>
+                        <button class="btn btn-primary" type="submit" onclick="modal.close();">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+        
         <!-- Bootstrap core JavaScript
     ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
@@ -352,6 +381,50 @@
 		<script src="assets/js/jquery.jcarousel.min.js"></script>
         <script src="assets/js/jcarousel.responsive.js"></script>
         <script src="assets/js/util.js"></script>
+        <script src="assets/js/rmodal.min.js"></script>
+        
+        <script type="text/javascript">
+	        window.onload = function() {
+	            var modal = new RModal(document.getElementById('modal'), {
+	                //content: 'Abracadabra'
+	                beforeOpen: function(next) {
+	                    console.log('beforeOpen');
+	                    next();
+	                }
+	                , afterOpen: function() {
+	                    console.log('opened');
+	                }
+	
+	                , beforeClose: function(next) {
+	                    console.log('beforeClose');
+	                    next();
+	                }
+	                , afterClose: function() {
+	                    console.log('closed');
+	                }
+	                // , bodyClass: 'modal-open'
+	                // , dialogClass: 'modal-dialog'
+	                // , dialogOpenClass: 'animated fadeIn'
+	                // , dialogCloseClass: 'animated fadeOut'
+	
+	                // , focus: true
+	                // , focusElements: ['input.form-control', 'textarea', 'button.btn-primary']
+	
+	                // , escapeClose: true
+	            });
+	
+	            document.addEventListener('keydown', function(ev) {
+	                modal.keydown(ev);
+	            }, false);
+	
+	            document.getElementById('showModal').addEventListener("click", function(ev) {
+	                ev.preventDefault();
+	                modal.open();
+	            }, false);
+
+            window.modal = modal;
+        }
+    </script>
     </body>
 </html>
 
