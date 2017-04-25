@@ -2,6 +2,16 @@
 	COMMONS CLASSES
 \*------------------------------------*/
 
+.Map
+{
+	position: relative; z-index: 1; width: 100%; overflow: hidden; box-shadow: 0px 1px 12px 3px #242424;
+	-webkit-box-shadow: 0px 1px 12px 3px #242424; -moz-box-shadow: 0px 1px 12px 3px #242424; -o-box-shadow: 0px 1px 12px 3px #242424; 
+}
+
+.Map #GoogleMap {
+	height: 399px;
+}
+
 h1, h2, h3, h4, h5, h6
 {
     font-family: 'Roboto Slab', serif;
