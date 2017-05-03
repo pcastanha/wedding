@@ -1,7 +1,9 @@
 package com.pedro.instawed;
 
+import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -12,5 +14,13 @@ public class PageController {
 	public ModelMap indexView(ModelMap model){
 		System.out.println("Executing Controller method");
 		return new ModelMap("wedding");
+	}
+	
+	@RequestMapping(value = "confirmation", method = RequestMethod.POST)
+	public void guestConfirmation(@RequestBody String data){
+		JSONObject jo = new JSONObject(data);
+		String name = jo.getString("name");
+		int guests = jo.getInt("guests");
+		System.out.println("Name: " + name + "\n" + "Guests: " + guests);
 	}
 }

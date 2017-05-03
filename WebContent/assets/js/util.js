@@ -2,10 +2,6 @@
  * 
  */
 
-function sendConfirmation(){
-	
-}
-
 var map = '';
 var center;
 
@@ -73,6 +69,21 @@ function loadGoogleMap(){
   script.type = 'text/javascript';
   script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDLboVTfMwyTJaSLJ9vOO_Dhe9Z4CcBIyA&v=3.exp&' + 'callback=initialize';
   document.body.appendChild(script);
+}
+
+function sendConfirmation(){
+	var name = $("#fd1").val();
+	var guests = $("#fd2").val();
+	
+	$.ajax({
+		type : "POST",
+		headers: { 
+			'Accept': 'application/json',
+			'Content-Type': 'application/json' 
+			},
+		url : "wed/confirmation",
+		data : JSON.stringify({name: name, guests: guests}),
+	});
 }
 
 $(document).ready(function() {
