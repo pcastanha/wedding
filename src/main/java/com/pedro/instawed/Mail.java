@@ -18,7 +18,7 @@ public class Mail implements IMail{
 	public Mail(){}
 	public Mail(String host){}
 
-	public static MimeMessage configureMail(){
+	public static MimeMessage configureMail(String body){
 		
 		String host="smtp.gmail.com";  
 		final String user="wedmailmessenger@gmail.com";
@@ -26,7 +26,7 @@ public class Mail implements IMail{
 		final String rec1 = "pedrocastanha@gmail.com";
 		final String rec2 = "marianandrade@gmail.com";
 
-		InternetAddress[] recipients = new InternetAddress[2];		
+		InternetAddress[] recipients = new InternetAddress[2];
 
 		Properties props = new Properties();
 		props.put("mail.smtp.host",host);  
@@ -55,8 +55,8 @@ public class Mail implements IMail{
 			recipients[0] = new InternetAddress(rec1);
 			recipients[1] = new InternetAddress(rec2);
 			message.addRecipients(Message.RecipientType.TO, recipients);
-			message.setSubject("Test");
-			message.setText("Hi, This mail is to inform you that the automatic e-mail worked.");
+			message.setSubject("Mari & Pedro - RSVP");
+			message.setText(body);
 		} catch (AddressException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -68,8 +68,8 @@ public class Mail implements IMail{
 		return message;
 	}
 
-	public static void sendMail() throws MessagingException{
-		Transport.send(Mail.configureMail());
+	public static void sendMail(String data) throws MessagingException{
+		Transport.send(Mail.configureMail(data));
 	}
 
 	@Override

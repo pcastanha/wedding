@@ -9,7 +9,7 @@ public class Main {
 		//InstaUtils.getPhotos();
 		
 		try {
-			Mail.sendMail();
+			Mail.sendMail("Test");
 		} catch (MessagingException e) {
 			e.printStackTrace();
 		}

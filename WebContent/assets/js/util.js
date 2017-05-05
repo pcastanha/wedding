@@ -83,6 +83,11 @@ function sendConfirmation(){
 			},
 		url : "wed/confirmation",
 		data : JSON.stringify({name: name, guests: guests}),
+		complete: function(){
+			$("#fd1").val('');
+			$("#fd2").val('');
+			swal('Parabéns!', 'RSVP enviado com sucesso!', 'success');
+		}
 	});
 }
 

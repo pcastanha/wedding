@@ -1,5 +1,7 @@
 package com.pedro.instawed;
 
+import javax.mail.MessagingException;
+
 import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -17,10 +19,19 @@ public class PageController {
 	}
 	
 	@RequestMapping(value = "confirmation", method = RequestMethod.POST)
-	public void guestConfirmation(@RequestBody String data){
-		JSONObject jo = new JSONObject(data);
-		String name = jo.getString("name");
-		int guests = jo.getInt("guests");
-		System.out.println("Name: " + name + "\n" + "Guests: " + guests);
+	public void guestConfirmation(@RequestBody String data){		
+		try {
+			JSONObject jo = new JSONObject(data);
+			String name = jo.getString("name");
+			int guests = jo.getInt("guests");
+			
+			System.out.println("Name: " + name + "\n" + "Guests: " + guests);
+			
+			Mail.sendMail("Nome: " + name + "\n" + "Convidados: " + guests);
+		} catch (MessagingException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			System.out.println("JSON Exception");
+		}
 	}
 }
